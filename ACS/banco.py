@@ -60,6 +60,8 @@ class Cliente():
             print('E-mail inválido, gentileza informar um e-mail válido.')
         else:
             self._email = novo_email
+    
+    email = property(get_email, set_email)
 
 
 class Banco():
@@ -73,12 +75,12 @@ class Banco():
     DICA2: utilze a variável acima para gerar automaticamente o número das
     contas do banco
     """
-
+  
     def __init__(self, nome: str):
         self._nome = nome
         self.contas = []
         self.contador = 0
-
+  
     def get_nome(self) -> str:
         """Acessor do Atributo Nome."""
         return self._nome
@@ -174,5 +176,4 @@ class Conta():
         '''
         Retorna uma lista com as operações (Tuplas) executadas na Conta
         '''
-
         return self.lista
